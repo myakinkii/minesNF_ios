@@ -8,15 +8,54 @@
 
 #import "AppDelegate.h"
 
+@interface AppDelegate()
+@property (strong, nonatomic) NSString *tcpDataBuffer;
+@end
+
 @implementation AppDelegate
+
+#define DEV (0)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    [SingletonSocket initWithDelegate:self AndSocketHost:(DEV?@"localhost":@"minesnf.com") AndPort:8081];
     return YES;
+}
+
+- (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port {
+    [sock readDataWithTimeout:-1 tag:0];
+}
+
+- (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
+    [self receivedMessage:data];
+    [sock readDataWithTimeout:-1 tag:0];
+}
+
+- (NSString *)tcpDataBuffer
+{
+    if (!_tcpDataBuffer)
+        _tcpDataBuffer = @"";
+    return _tcpDataBuffer;
+}
+
+-(void)receivedMessage:(NSData *)data
+{
+    NSString* str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    self.tcpDataBuffer= [self.tcpDataBuffer stringByAppendingString:str];
+    
+    if ([self.tcpDataBuffer hasSuffix:@"\n"]) {
+        NSArray *array = [self.tcpDataBuffer componentsSeparatedByString:@"\n"];
+        for (NSString *re in array){
+            NSData* data = [re dataUsingEncoding:NSUTF8StringEncoding];
+            NSDictionary *json=[NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+            if (json)
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"TcpData"
+                                                                    object:self
+                                                                  userInfo:json];
+        }
+        self.tcpDataBuffer=@"";
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

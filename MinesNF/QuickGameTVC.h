@@ -1,8 +1,8 @@
 //
-//  AppDelegate.h
+//  QuickGameTVC.h
 //  MinesNF
 //
-//  Created by Alex Myakinkii on 14/06/14.
+//  Created by Alex Myakinkii on 21/08/14.
 //  Copyright (c) 2014 Alex Myakinkii. All rights reserved.
 //
 
@@ -10,8 +10,6 @@
 #import "SingletonSocket.h"
 #import "AsyncSocket/GCDAsyncSocket.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface QuickGameTVC : UITableViewController
 
 @end

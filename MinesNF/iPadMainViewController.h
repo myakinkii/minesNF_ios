@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  iPadMainViewController.h
 //  MinesNF
 //
 //  Created by Alex Myakinkii on 14/06/14.
@@ -10,8 +10,6 @@
 #import "SingletonSocket.h"
 #import "AsyncSocket/GCDAsyncSocket.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface iPadMainViewController : UIViewController
 
 @end

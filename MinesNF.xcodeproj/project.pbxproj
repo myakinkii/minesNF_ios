@@ -19,6 +19,16 @@
 		FA5C5533194C4C98000973FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5C551B194C4C97000973FF /* UIKit.framework */; };
 		FA5C553B194C4C98000973FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA5C5539194C4C98000973FF /* InfoPlist.strings */; };
 		FA5C553D194C4C98000973FF /* MinesNFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5C553C194C4C98000973FF /* MinesNFTests.m */; };
+		FA5C5549194C4D60000973FF /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5C5548194C4D60000973FF /* iPad.storyboard */; };
+		FA5C5558194C5C50000973FF /* SingletonSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5C5557194C5C50000973FF /* SingletonSocket.m */; };
+		FA5C555E194C5D74000973FF /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5C555B194C5D74000973FF /* GCDAsyncSocket.m */; };
+		FA5C555F194C5D74000973FF /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5C555D194C5D74000973FF /* GCDAsyncUdpSocket.m */; };
+		FA5C5562194C62D5000973FF /* iPadMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5C5561194C62D5000973FF /* iPadMainViewController.m */; };
+		FAA0BE3819A5C4680081BE85 /* QuickGameTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0BE3719A5C4680081BE85 /* QuickGameTVC.m */; };
+		FAAA77C61960EFCD009060A3 /* CellView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA77C51960EFCD009060A3 /* CellView.m */; };
+		FAAB7F2A195DA18F00845E53 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAB7F29195DA18F00845E53 /* GameViewController.m */; };
+		FAB3A48C197814030003B8AC /* PartiesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB3A48B197814030003B8AC /* PartiesVC.m */; };
+		FAB3A48F19781A140003B8AC /* AddPartyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB3A48E19781A140003B8AC /* AddPartyVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +58,25 @@
 		FA5C5538194C4C98000973FF /* MinesNFTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MinesNFTests-Info.plist"; sourceTree = "<group>"; };
 		FA5C553A194C4C98000973FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FA5C553C194C4C98000973FF /* MinesNFTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinesNFTests.m; sourceTree = "<group>"; };
+		FA5C5548194C4D60000973FF /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
+		FA5C554A194C4DC6000973FF /* SingletonSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonSocket.h; sourceTree = "<group>"; };
+		FA5C5557194C5C50000973FF /* SingletonSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonSocket.m; sourceTree = "<group>"; };
+		FA5C555A194C5D74000973FF /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		FA5C555B194C5D74000973FF /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		FA5C555C194C5D74000973FF /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		FA5C555D194C5D74000973FF /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		FA5C5560194C62D5000973FF /* iPadMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadMainViewController.h; sourceTree = "<group>"; };
+		FA5C5561194C62D5000973FF /* iPadMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadMainViewController.m; sourceTree = "<group>"; };
+		FAA0BE3619A5C4680081BE85 /* QuickGameTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickGameTVC.h; sourceTree = "<group>"; };
+		FAA0BE3719A5C4680081BE85 /* QuickGameTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickGameTVC.m; sourceTree = "<group>"; };
+		FAAA77C41960EFCD009060A3 /* CellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellView.h; sourceTree = "<group>"; };
+		FAAA77C51960EFCD009060A3 /* CellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellView.m; sourceTree = "<group>"; };
+		FAAB7F28195DA18F00845E53 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		FAAB7F29195DA18F00845E53 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		FAB3A48A197814030003B8AC /* PartiesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartiesVC.h; sourceTree = "<group>"; };
+		FAB3A48B197814030003B8AC /* PartiesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartiesVC.m; sourceTree = "<group>"; };
+		FAB3A48D19781A140003B8AC /* AddPartyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPartyVC.h; sourceTree = "<group>"; };
+		FAB3A48E19781A140003B8AC /* AddPartyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPartyVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +139,22 @@
 				FA5C5526194C4C98000973FF /* AppDelegate.h */,
 				FA5C5527194C4C98000973FF /* AppDelegate.m */,
 				FA5C5529194C4C98000973FF /* Images.xcassets */,
+				FA5C5548194C4D60000973FF /* iPad.storyboard */,
+				FA5C5560194C62D5000973FF /* iPadMainViewController.h */,
+				FA5C5561194C62D5000973FF /* iPadMainViewController.m */,
+				FAB3A48D19781A140003B8AC /* AddPartyVC.h */,
+				FAB3A48E19781A140003B8AC /* AddPartyVC.m */,
+				FAB3A48A197814030003B8AC /* PartiesVC.h */,
+				FAB3A48B197814030003B8AC /* PartiesVC.m */,
+				FA5C554A194C4DC6000973FF /* SingletonSocket.h */,
+				FA5C5557194C5C50000973FF /* SingletonSocket.m */,
+				FAAA77C41960EFCD009060A3 /* CellView.h */,
+				FAAA77C51960EFCD009060A3 /* CellView.m */,
+				FAAB7F28195DA18F00845E53 /* GameViewController.h */,
+				FAAB7F29195DA18F00845E53 /* GameViewController.m */,
+				FAA0BE3619A5C4680081BE85 /* QuickGameTVC.h */,
+				FAA0BE3719A5C4680081BE85 /* QuickGameTVC.m */,
+				FA5C5559194C5D74000973FF /* AsyncSocket */,
 				FA5C551E194C4C98000973FF /* Supporting Files */,
 			);
 			path = MinesNF;
@@ -142,6 +187,17 @@
 				FA5C5539194C4C98000973FF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA5C5559194C5D74000973FF /* AsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				FA5C555A194C5D74000973FF /* GCDAsyncSocket.h */,
+				FA5C555B194C5D74000973FF /* GCDAsyncSocket.m */,
+				FA5C555C194C5D74000973FF /* GCDAsyncUdpSocket.h */,
+				FA5C555D194C5D74000973FF /* GCDAsyncUdpSocket.m */,
+			);
+			path = AsyncSocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA5C5522194C4C98000973FF /* InfoPlist.strings in Resources */,
+				FA5C5549194C4D60000973FF /* iPad.storyboard in Resources */,
 				FA5C552A194C4C98000973FF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +296,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAA77C61960EFCD009060A3 /* CellView.m in Sources */,
+				FAB3A48F19781A140003B8AC /* AddPartyVC.m in Sources */,
+				FAA0BE3819A5C4680081BE85 /* QuickGameTVC.m in Sources */,
+				FA5C555E194C5D74000973FF /* GCDAsyncSocket.m in Sources */,
+				FA5C555F194C5D74000973FF /* GCDAsyncUdpSocket.m in Sources */,
+				FAAB7F2A195DA18F00845E53 /* GameViewController.m in Sources */,
+				FAB3A48C197814030003B8AC /* PartiesVC.m in Sources */,
+				FA5C5558194C5C50000973FF /* SingletonSocket.m in Sources */,
+				FA5C5562194C62D5000973FF /* iPadMainViewController.m in Sources */,
 				FA5C5528194C4C98000973FF /* AppDelegate.m in Sources */,
 				FA5C5524194C4C98000973FF /* main.m in Sources */,
 			);
@@ -363,6 +429,7 @@
 				GCC_PREFIX_HEADER = "MinesNF/MinesNF-Prefix.pch";
 				INFOPLIST_FILE = "MinesNF/MinesNF-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -376,6 +443,7 @@
 				GCC_PREFIX_HEADER = "MinesNF/MinesNF-Prefix.pch";
 				INFOPLIST_FILE = "MinesNF/MinesNF-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -439,6 +507,7 @@
 				FA5C5542194C4C98000973FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA5C5543194C4C98000973FF /* Build configuration list for PBXNativeTarget "MinesNFTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +516,7 @@
 				FA5C5545194C4C98000973FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
