@@ -58,9 +58,9 @@
         [shape addLineToPoint:CGPointMake(padding, shapeHeight-padding)];
         [shape closePath];
         
-        [[UIColor blueColor] setStroke];
+//        [[UIColor blueColor] setStroke];
+        [[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] setStroke];
         [shape stroke];
-        
         //self.backgroundColor = [CellView colorWithHexString:@"bbbbbb"] ;
         
     }

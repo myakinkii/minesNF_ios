@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIView *boardView;
 @property (strong, nonatomic) NSMutableArray *cellViews;
 @property (nonatomic) double cellSize;
+@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
 
 @end
@@ -84,6 +85,9 @@
             [self openCells:json[@"arg"] ];
         if ([func isEqualToString:@"StartGame"])
                 [self restart];
+        if ([func isEqualToString:@"ShowResultRank"])
+            [self showResult:json[@"arg"] mode:@"rank"];
+        
     }
 }
 
@@ -94,6 +98,13 @@
         CellView *cell = self.cellViews[index];
         cell.cellValue = [cells[s] integerValue];;
     }
+}
+
+- (void)showResult:(NSDictionary *)res mode:(NSString *)mode {
+    if ([res[@"result"] isEqualToString:@"win"])
+        self.resultLabel.text = [NSString stringWithFormat:@"current: %@s, best: %@s",res[@"time"],res[@"bestTime"]];
+    else
+        self.resultLabel.text = @"";
 }
 
 - (void)restart {

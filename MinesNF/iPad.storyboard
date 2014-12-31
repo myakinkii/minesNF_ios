@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="JQp-lt-Ez3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="JQp-lt-Ez3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--I Pad Main View Controller-->
@@ -46,11 +47,7 @@
                                             </segue>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Players" id="moS-iT-dRf">
-                                        <connections>
-                                            <action selector="gammme:" destination="JQp-lt-Ez3" id="hwV-B0-a3q"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Players" id="moS-iT-dRf"/>
                                     <barButtonItem title="QuickGame" id="dVm-Qw-o11">
                                         <connections>
                                             <segue destination="1IF-aN-Myh" kind="popover" identifier="QuickGame" popoverAnchorBarButtonItem="dVm-Qw-o11" id="M9L-WL-Z2g">
@@ -267,6 +264,12 @@
                                     <constraint firstItem="yqT-Gd-lvd" firstAttribute="leading" secondItem="J1x-9m-VOD" secondAttribute="leading" id="qFu-nX-AYd"/>
                                 </constraints>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXG-fB-Unc">
+                                <rect key="frame" x="16" y="55" width="992" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -288,6 +291,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="boardView" destination="U1b-UR-h70" id="FQz-WX-jz7"/>
+                        <outlet property="resultLabel" destination="mXG-fB-Unc" id="yyg-gE-HqV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H50-Cr-tBe" userLabel="First Responder" sceneMemberID="firstResponder"/>

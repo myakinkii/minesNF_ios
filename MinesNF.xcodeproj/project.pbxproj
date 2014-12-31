@@ -77,6 +77,7 @@
 		FAB3A48B197814030003B8AC /* PartiesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartiesVC.m; sourceTree = "<group>"; };
 		FAB3A48D19781A140003B8AC /* AddPartyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPartyVC.h; sourceTree = "<group>"; };
 		FAB3A48E19781A140003B8AC /* AddPartyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPartyVC.m; sourceTree = "<group>"; };
+		FAF2394419F1527200F64123 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +107,7 @@
 		FA5C550B194C4C97000973FF = {
 			isa = PBXGroup;
 			children = (
+				FAF2394419F1527200F64123 /* README.md */,
 				FA5C551D194C4C98000973FF /* MinesNF */,
 				FA5C5536194C4C98000973FF /* MinesNFTests */,
 				FA5C5516194C4C97000973FF /* Frameworks */,
