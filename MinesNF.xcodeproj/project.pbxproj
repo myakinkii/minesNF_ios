@@ -29,6 +29,7 @@
 		FAAB7F2A195DA18F00845E53 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAB7F29195DA18F00845E53 /* GameViewController.m */; };
 		FAB3A48C197814030003B8AC /* PartiesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB3A48B197814030003B8AC /* PartiesVC.m */; };
 		FAB3A48F19781A140003B8AC /* AddPartyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB3A48E19781A140003B8AC /* AddPartyVC.m */; };
+		FAFD83441A6A6CEF0025D826 /* SingletonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFD83431A6A6CEF0025D826 /* SingletonModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		FAB3A48D19781A140003B8AC /* AddPartyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPartyVC.h; sourceTree = "<group>"; };
 		FAB3A48E19781A140003B8AC /* AddPartyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPartyVC.m; sourceTree = "<group>"; };
 		FAF2394419F1527200F64123 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FAFD83421A6A6CEF0025D826 /* SingletonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonModel.h; sourceTree = "<group>"; };
+		FAFD83431A6A6CEF0025D826 /* SingletonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 				FAB3A48B197814030003B8AC /* PartiesVC.m */,
 				FA5C554A194C4DC6000973FF /* SingletonSocket.h */,
 				FA5C5557194C5C50000973FF /* SingletonSocket.m */,
+				FAFD83421A6A6CEF0025D826 /* SingletonModel.h */,
+				FAFD83431A6A6CEF0025D826 /* SingletonModel.m */,
 				FAAA77C41960EFCD009060A3 /* CellView.h */,
 				FAAA77C51960EFCD009060A3 /* CellView.m */,
 				FAAB7F28195DA18F00845E53 /* GameViewController.h */,
@@ -301,6 +306,7 @@
 				FAAA77C61960EFCD009060A3 /* CellView.m in Sources */,
 				FAB3A48F19781A140003B8AC /* AddPartyVC.m in Sources */,
 				FAA0BE3819A5C4680081BE85 /* QuickGameTVC.m in Sources */,
+				FAFD83441A6A6CEF0025D826 /* SingletonModel.m in Sources */,
 				FA5C555E194C5D74000973FF /* GCDAsyncSocket.m in Sources */,
 				FA5C555F194C5D74000973FF /* GCDAsyncUdpSocket.m in Sources */,
 				FAAB7F2A195DA18F00845E53 /* GameViewController.m in Sources */,

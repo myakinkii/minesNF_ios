@@ -11,10 +11,7 @@
 
 @interface SingletonSocket : NSObject
 
-@property (nonatomic,assign) id delegate;
-
 +(void)initWithDelegate:(id)delegateObject AndSocketHost:(NSString*)host AndPort:(NSInteger)port;
 +(GCDAsyncSocket *)getInstance;
-//+(instancetype)sharedSocket;
 
 @end

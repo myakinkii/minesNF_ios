@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SingletonSocket.h"
+#import "SingletonModel.h"
 #import "AsyncSocket/GCDAsyncSocket.h"
 
 @interface iPadMainViewController : UIViewController

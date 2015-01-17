@@ -47,7 +47,8 @@
 
 - (void)viewDidLayoutSubviews
 {
-    [self.boardView setFrame:CGRectMake((1024.0-self.cols*self.cellSize)/2,100,
+#warning "hardcoded screen resolution!"
+    [self.boardView setFrame:CGRectMake((1024.0-self.cols*self.cellSize)/2,(768.0-100-self.rows*self.cellSize)/2,
                                         self.cols*self.cellSize,self.rows*self.cellSize)];
 }
 
@@ -83,12 +84,19 @@
     if ([context isEqualToString:@"game"]) {
         if ([func isEqualToString:@"CellValues"])
             [self openCells:json[@"arg"] ];
+        if ([func isEqualToString:@"OpenLog"])
+            [self openLog:json[@"arg"]];
         if ([func isEqualToString:@"StartGame"])
-                [self restart];
+            [self restart];
         if ([func isEqualToString:@"ShowResultRank"])
             [self showResult:json[@"arg"] mode:@"rank"];
         
     }
+}
+
+- (void)openLog:(NSDictionary *)cells {
+    for (id time in cells)
+        [self openCells:[cells objectForKey:time][@"cellsOpened"]];
 }
 
 - (void)openCells:(NSDictionary *)cells {

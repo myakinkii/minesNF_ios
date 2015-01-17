@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *chat;
 @property (weak, nonatomic) IBOutlet UITextField *input;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
-@property (weak, nonatomic) NSDictionary *json2segue;
 @property (strong) UIPopoverController *popover;
 
 @end
@@ -34,8 +33,12 @@
     [super viewDidLoad];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:@"TcpData" object:nil];
-    [[SingletonSocket getInstance] writeData:[@"/iam\n" dataUsingEncoding:NSUTF8StringEncoding] withTimeout:-1 tag:0];
-
+    
+    NSString *iamhash = [[NSUserDefaults standardUserDefaults] stringForKey:@"iamhash"]?[[NSUserDefaults standardUserDefaults] stringForKey:@"iamhash"]:@"";
+    [[SingletonModel getInstance] setObject:iamhash forKey:@"iamhash"];
+    
+    NSString *iam = [NSString stringWithFormat:@"/iam %@\n",iamhash];
+    [[SingletonSocket getInstance] writeData:[iam dataUsingEncoding:NSUTF8StringEncoding] withTimeout:-1 tag:0];
 }
 
 - (IBAction)quitGame:(UIStoryboardSegue *)segue{
@@ -60,17 +63,25 @@
     if ([func isEqualToString:@"IamHash"])
         [self handleIam:json];
     
-    if ([func isEqualToString:@"GameStarted"])
+    if ([func isEqualToString:@"StartGame"])
         [self startGame:json[@"arg"]];
     
 }
 
 - (void)startGame:(NSDictionary *)arg{
-    self.json2segue = arg;
-    [self performSegueWithIdentifier:@"StartGame" sender:nil];
+    if (![SingletonModel getInstance][@"inGame"]){
+        [[SingletonModel getInstance] setObject:arg forKey:@"inGame"];
+        [self performSegueWithIdentifier:@"StartGame" sender:nil];
+     }
 }
 
 - (void)handleIam:(NSDictionary *)json{
+    
+    NSString *iamhash = json[@"arg"];
+    [[NSUserDefaults standardUserDefaults] setObject:iamhash forKey:@"iamhash"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[SingletonModel getInstance] setObject:iamhash forKey:@"iamhash"];
+    
     NSString *str= [NSString stringWithFormat:@"iam: %@, hash: %@",json[@"usr"],json[@"arg"]];
     [self showMessage:str];
 }
@@ -108,12 +119,10 @@
     }
     
     if ([segue.identifier isEqualToString:@"StartGame"]) {
-        
         if (self.popover) [self.popover dismissPopoverAnimated:NO];
-        
         GameViewController *gvc = [segue destinationViewController];
-        gvc.cols = [self.json2segue[@"c"] integerValue];
-        gvc.rows = [self.json2segue[@"r"] integerValue];
+        gvc.cols = [[SingletonModel getInstance][@"inGame"][@"c"] integerValue];
+        gvc.rows = [[SingletonModel getInstance][@"inGame"][@"r"] integerValue];
     }
 }
 

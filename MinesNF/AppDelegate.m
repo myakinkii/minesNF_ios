@@ -18,7 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [SingletonSocket initWithDelegate:self AndSocketHost:(DEV?@"localhost":@"minesnf.com") AndPort:8081];
+    //init settings object and load it into model
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults objectForKey:@"server"])
+        [defaults setObject:@"minesnf.com" forKey:@"server"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[SingletonModel getInstance] setObject:[[NSUserDefaults standardUserDefaults] stringForKey:@"server"] forKey:@"server"];
+    
+    [SingletonSocket initWithDelegate:self AndSocketHost:(DEV?@"localhost":[SingletonModel getInstance][@"server"]) AndPort:8081];
     return YES;
 }
 
@@ -29,6 +38,13 @@
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
     [self receivedMessage:data];
     [sock readDataWithTimeout:-1 tag:0];
+}
+
+- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)error {
+    if (error)
+        NSLog(@"ERROR %@",[error description]);
+    else
+        NSLog(@"Disconnected somehow");
 }
 
 - (NSString *)tcpDataBuffer
